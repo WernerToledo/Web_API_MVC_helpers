@@ -1,0 +1,59 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model IEnumerable<Web_API_MVC_helpers.Models.equipos>
+@{
+}
+<h1>Mantemiento de equipos</h1>
+<p>
+    <a class="btn btn-success" asp-action="Create">Create New</a>
+</p>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.nombre)</th>
+            <th>@Html.DisplayNameFor(model => model.descripcion)</th>
+            <th>@Html.DisplayNameFor(model => model.tipo_equipo_id)</th>
+            <th>@Html.DisplayNameFor(model => model.marca_id)</th>
+            <th>@Html.DisplayNameFor(model => model.modelo)</th>
+            <th>@Html.DisplayNameFor(model => model.anio_compra)</th>
+            <th>@Html.DisplayNameFor(model => model.costo)</th>
+            <th>@Html.DisplayNameFor(model => model.vida_util)</th>
+            <th>@Html.DisplayNameFor(model => model.estado_equipo_id)</th>
+            <th>@Html.DisplayNameFor(model => model.estado)</th>
+        </tr>
+    </thead>
+    <!--    <tbody>
+       @*@ @foreach(var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(Modelitem => item.id_marca)</td>
+                <td>@Html.DisplayFor(Modelitem => item.nombre_marca)</td>
+                <td>@Html.DisplayFor(Modelitem => item.estados)</td>
+            </tr>
+        }
+        *@
+    </tbody>
+    -->
+    <tbody>
+        @foreach (var item in (IEnumerable<dynamic>)ViewData["Listadoequipo"])
+        {
+            <tr>
+                <td>@item.nombre</td>
+                <td>@item.descrip</td>
+                <td>@item.tipo_equipo</td>
+                <td>@item.marca</td>
+                <td>@item.modelo</td>
+                <td>@item.anio</td>
+                <td>@item.costo</td>
+                <td>@item.vida_util</td>
+                <td>@item.estados_equipo</td>
+                <td>@item.estado</td>
+                
+            </tr>
+        }
+            
+        
+    </tbody>
+</table>

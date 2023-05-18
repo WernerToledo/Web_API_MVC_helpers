@@ -62,7 +62,7 @@ namespace Web_API_MVC_helpers.Controllers
         [HttpPost]
         [Route("Add")]
 
-        public async Task<IActionResult> CrearEquipo(equipos nuevoequipo)
+        public IActionResult CrearEquipo(equipos nuevoequipo)
         {
             _equiposContext.Add(nuevoequipo);
             _equiposContext.SaveChanges();
